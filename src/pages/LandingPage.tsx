@@ -41,7 +41,6 @@ import {
   SafetyOutlined,
   TeamOutlined,
   ClockCircleOutlined,
-  RightOutlined
 } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
