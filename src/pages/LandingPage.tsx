@@ -3,6 +3,26 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import background from '../assets/background.jpg';
 import pic from '../assets/Vithyea.jpg'
+import { useNavigate,useLocation } from 'react-router-dom';
+
+interface Feature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface Testimonial {
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+}
+
+interface Step {
+  title: string;
+  description: string;
+}
+
 
 import {
   Layout,
@@ -28,33 +48,19 @@ const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text } = Typography;
 const { Step } = Steps;
 
-interface Feature {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface Testimonial {
-  name: string;
-  avatar: string;
-  rating: number;
-  comment: string;
-}
-
-interface Step {
-  title: string;
-  description: string;
-}
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
       easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      once: false,
+      mirror: true
     });
   }, []);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const features: Feature[] = [
     {
@@ -119,6 +125,13 @@ const LandingPage: React.FC = () => {
     }
   ];
 
+  const getStarted = (e:any) => {
+    e.preventDefault()
+    console.log("Get Started Clicked")
+    const to = location.state?.from?.pathname || "/login"
+    navigate(to,{replace:true})
+  }
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Header style={{ 
@@ -171,7 +184,7 @@ const LandingPage: React.FC = () => {
               </div>
               <div data-aos="fade-up" data-aos-delay="600">
                 <Space size="large" style={{display: 'flex', justifyContent: 'center',paddingTop: '2rem'  }}>
-                  <Button type="primary" size="large" icon={<SearchOutlined />}>
+                  <Button type="primary" size="large" icon={<SearchOutlined />} onClick={getStarted}>
                     Get started
                   </Button>
                   <Button size="large" icon={<RightOutlined />}>
