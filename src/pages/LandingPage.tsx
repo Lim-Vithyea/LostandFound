@@ -187,9 +187,7 @@ const LandingPage: React.FC = () => {
                   <Button type="primary" size="large" icon={<SearchOutlined />} onClick={getStarted}>
                     Get started
                   </Button>
-                  <Button size="large" icon={<RightOutlined />}>
-                    Report Lost Item
-                  </Button>
+                 
                 </Space>
               </div>
             </Col>
