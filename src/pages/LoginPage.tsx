@@ -51,7 +51,7 @@ const LoginPage: React.FC = () => {
             <Card className="shadow-lg rounded-2xl">
               <Title
                 level={2}
-                className="text-center mb-5 mt-2 text-blue-600 font-bold"
+                style={{color:"#3b82f6",textAlign:"center",marginBottom:"1rem",marginTop:"1rem",fontWeight:"bold"}}
               >
                 Sign Up
               </Title>
@@ -110,7 +110,7 @@ const LoginPage: React.FC = () => {
             <Card className="shadow-lg rounded-2xl">
               <Title
                 level={2}
-                className="text-center mb-4 mt-2 text-blue-600 font-bold"
+                style={{color:"#3b82f6",textAlign:"center",marginBottom:"1rem",marginTop:"1rem",fontWeight:"bold"}}
               >
                 Login
               </Title>
