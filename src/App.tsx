@@ -6,7 +6,6 @@ import LoginPage from './pages/LoginPage'
 import MainPage from './layout/MainPage'
 import Profile from './pages/Profile'
 import FoundorLostForm from './pages/FoundorLostForm'
-import TopHeader from './components/TopHeader'
 
 function App() {
   return (
