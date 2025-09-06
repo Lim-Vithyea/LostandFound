@@ -248,7 +248,7 @@ const LandingPage: React.FC = () => {
         <div style={{ padding: '80px 50px'}}>
           <div data-aos="fade-up">
             <Title level={2} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              What Students Say
+              What People Say
             </Title>
           </div>
           <Row gutter={[32, 32]}>
@@ -274,7 +274,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div style={{ 
+        {/* <div style={{ 
           padding: '80px 50px',
           background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
           color: 'white',
@@ -289,7 +289,7 @@ const LandingPage: React.FC = () => {
               </div>
               <div data-aos="fade-up" data-aos-delay="200">
                 <Paragraph style={{ fontSize: '1.1rem', marginBottom: '2rem', color: 'rgba(255,255,255,0.9)' }}>
-                  Join your campus community today and never lose track of your belongings again.
+                  try it now
                 </Paragraph>
               </div>
               <div data-aos="fade-up" data-aos-delay="400">
@@ -304,8 +304,9 @@ const LandingPage: React.FC = () => {
               </div>
             </Col>
           </Row>
-        </div>
-      </Content>
+        </div>*/}
+      </Content> 
+      
 
       {/* Footer */}
       <Footer style={{ background: '#ffffff', padding: '40px 50px' }}>

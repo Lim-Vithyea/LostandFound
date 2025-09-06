@@ -59,7 +59,7 @@ const TopHeader : React.FC = () => {
                 >
                   <Button>
                     <UserOutlined />
-                    <span>John Doe</span>
+                    <span>Lim Vithyea</span>
                   </Button>
                 </Dropdown>
               </Col>

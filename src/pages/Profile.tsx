@@ -3,6 +3,9 @@ import { Card, Avatar, Tabs, Row, Col, Button, Statistic, List, Tag, Input } fro
 import { UserOutlined, EditOutlined, MailOutlined, PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import TopHeader from "../components/TopHeader";
 import profilepic from "../assets/Vithyea.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const { TabPane } = Tabs;
 
@@ -28,8 +31,21 @@ const userData = {
   ]
 };
 
+
+
 const Profile: React.FC = () => {
   const [activeTab, setActiveTab] = useState('activity');
+  useEffect(() => {
+    AOS.init(
+      {
+        duration: 300,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: true,
+        offset: 100
+      }
+    );
+  }, []);
 
   const renderStatusTag = (status: string) => {
     switch(status) {
@@ -50,6 +66,7 @@ const Profile: React.FC = () => {
       <div className="container mx-auto px-2 py-2 max-w-8xl">
         {/* Profile Header */}
         <Card className="mb-6 shadow-sm">
+        <div data-aos="fade-up" data-aos-delay="400">
           <Row gutter={[24, 16]} align="middle">
             <Col xs={24} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
               <Avatar 
@@ -102,9 +119,11 @@ const Profile: React.FC = () => {
               </div>
             </Col>
           </Row>
+          </div>
         </Card>
 
         {/* Tabs Section */}
+        <div data-aos="fade-up" data-aos-delay="400">
         <Card className="shadow-sm">
           <Tabs activeKey={activeTab} onChange={setActiveTab}>
             <TabPane tab="Activity" key="activity">
@@ -177,6 +196,7 @@ const Profile: React.FC = () => {
             </TabPane>
           </Tabs>
         </Card>
+        </div>
       </div>
     </div>
   );

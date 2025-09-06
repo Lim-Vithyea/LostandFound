@@ -39,6 +39,7 @@ const FoundorLostForm: React.FC = () => {
       <TopHeader/>
       <div className="flex-grow flex items-center justify-center p-1">
         <div className="w-full max-w-7xl">
+          <div data-aos="fade-up" data-aos-delay="200">
           <Card className="shadow-lg" style={{ maxHeight: '90vh', overflowY: 'auto' }}>
           <Row gutter={[24, 16]}>
             <Col xs={24} md={12} className="p-4">
@@ -193,6 +194,7 @@ const FoundorLostForm: React.FC = () => {
             </Col>
           </Row>
           </Card>
+          </div>
         </div>
       </div>
     </div>
