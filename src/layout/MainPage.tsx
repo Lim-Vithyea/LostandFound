@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Card, Row, Col, Typography, Button, Badge, Space, Statistic, Layout, Pagination, Input, Select, Spin } from 'antd';
 import { ShoppingCartOutlined, EyeOutlined, HeartOutlined, SearchOutlined, FilterOutlined } from '@ant-design/icons';
-import { Header } from 'antd/es/layout/layout';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { sampleItems } from '../properties/properties';
+import TopHeader from '../components/TopHeader';
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 const { Meta } = Card;
 const { Search } = Input;
 const { Option } = Select;
@@ -18,6 +18,7 @@ const MainPage: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [loading, setLoading] = useState(false);
+
 
   // Filter and search items
   const filteredItems = useMemo(() => {
@@ -75,25 +76,11 @@ const MainPage: React.FC = () => {
 
   return (
     <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
-      <Header style={{ 
-        background: 'white', 
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 1000,
-        padding: '0 24px'
-      }}>
-        <Row justify="space-between" align="middle" style={{ height: '100%' }}>
-          <Col>
-            <Title level={3} style={{ margin: 0, color: '#3b82f6' }}>
-              Lost & Found 
-            </Title>
-          </Col>
-        </Row>
-      </Header>
-      
-      <div style={{ overflow: 'auto', minHeight: 'calc(100vh - 64px)' }}>
-        <div style={{ backgroundColor: '#fff', padding: '24px', borderBottom: '1px solid #f0f0f0', position: 'sticky' }}>
+      <div className='fixed top-0 z-10 w-full'>
+        <TopHeader/>
+      </div>
+      <div style={{ overflow: 'auto', minHeight: 'calc(100vh10 - 64px)', paddingTop: '65px' }}>
+        <div style={{ backgroundColor: '#fff', padding: '10px', borderBottom: '1px solid #f0f0f0', position: 'sticky' }}>
           <Row gutter={[16, 16]} align="middle">
             <Col xs={24} sm={12} md={8}>
               <Search

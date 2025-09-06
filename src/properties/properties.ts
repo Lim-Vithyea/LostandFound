@@ -1,4 +1,17 @@
-export const sampleItems = [
+interface Item {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    category: string;
+    location: string;
+    date: string;
+    status: string;
+    reward: string;
+}
+
+
+export const sampleItems: Item[] = [
   {
     id: 1,
     title: 'Lost iPhone 14 Pro',
